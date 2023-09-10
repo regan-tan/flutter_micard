@@ -1,68 +1,82 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      home: Scaffold(
         backgroundColor: Color.fromARGB(255, 90, 228, 97),
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
+        body: SafeArea(
+            child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+              CircleAvatar(
+                radius:50.0,
+                backgroundImage: AssetImage('images/icon.png'),
+              ),
+              Text(
+                'Regan Tan',
+                style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  fontSize: 40.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                'JUNIOR FLUTTER DEVELOPER',
+                style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  fontSize: 20.0,
+                  letterSpacing: 2.5,
+                  color: Color.fromARGB(255, 90, 228, 97),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+              height: 20.0,
+              width: 150.0,
+              child: Divider(
+                color: Colors.teal.shade100,
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    '+44 123 456 789',
+                    style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontFamily: 'Source Sans Pro',
+                      fontSize: 20.0,
+                    ),
+                  ),
+                )),
+            Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'angela@email.com',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.teal.shade900,
+                        fontFamily: 'Source Sans Pro'),
+                  ),
+                ))
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        )),
       ),
     );
   }
