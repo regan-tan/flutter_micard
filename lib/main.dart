@@ -9,16 +9,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 90, 228, 97),
+        backgroundColor: Colors.teal.shade500,
         body: SafeArea(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-              CircleAvatar(
+              const CircleAvatar(
                 radius:50.0,
                 backgroundImage: AssetImage('images/icon.png'),
               ),
-              Text(
+              const Text(
                 'Regan Tan',
                 style: TextStyle(
                   fontFamily: 'Pacifico',
@@ -27,13 +27,13 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 'JUNIOR FLUTTER DEVELOPER',
                 style: TextStyle(
-                  fontFamily: 'Pacifico',
+                  fontFamily: 'fonts/Pacifico-Regular.ttf',
                   fontSize: 20.0,
                   letterSpacing: 2.5,
-                  color: Color.fromARGB(255, 90, 228, 97),
+                  color: Colors.black26,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -45,34 +45,34 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                 child: ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.phone,
-                    color: Colors.teal,
+                    color:Colors.teal,
                   ),
                   title: Text(
-                    '+44 123 456 789',
+                    '+65 8888 7777',
                     style: TextStyle(
                       color: Colors.teal.shade900,
-                      fontFamily: 'Source Sans Pro',
+                      fontFamily: 'fonts/Pacifico-Regular.ttf',
                       fontSize: 20.0,
                     ),
                   ),
                 )),
             Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                 child: ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.email,
                     color: Colors.teal,
                   ),
                   title: Text(
-                    'angela@email.com',
+                    'testemail@email.com',
                     style: TextStyle(
                         fontSize: 20.0,
                         color: Colors.teal.shade900,
-                        fontFamily: 'Source Sans Pro'),
+                        fontFamily: 'Pacifico'),
                   ),
                 ))
           ],
